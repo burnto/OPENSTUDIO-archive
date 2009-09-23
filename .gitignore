@@ -1,0 +1,4 @@
+db/openstudio.data
+db/*.sqlite3
+tmp/*
+.DS_Store

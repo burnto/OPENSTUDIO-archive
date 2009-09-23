@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  owner_id: 1
+  creator_id: 1
+  legacy_id: MyString
+
+two:
+  title: MyString
+  owner_id: 1
+  creator_id: 1
+  legacy_id: MyString
