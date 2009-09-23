@@ -1,0 +1,14 @@
+<h1><%= @piece.title %></h1>
+
+<div>
+  <%= image_tag "/os/500/#{@piece.legacy_id}.png" %>
+</div>
+
+<p>
+  Creator: <%= link_to h(@piece.creator.name), member_path(@piece.creator) %>
+</p>
+
+<p>
+  Owner: <%= link_to h(@piece.owner.name), member_path(@piece.owner) %>
+</p>
+

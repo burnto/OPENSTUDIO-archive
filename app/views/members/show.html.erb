@@ -1,0 +1,12 @@
+<h1><%= @member.name %></h1>
+<p>(<%= @member.login %>)</p>
+
+<h2>Purchased</h2>
+<% @member.owned.sold.each do |piece| %>
+  <%= link_to h(piece.title), piece_path(piece) %>
+<% end %>
+
+<h2>Portfolio</h2>
+<% @member.created.each do |piece| %>
+  <%= link_to h(piece.title), piece_path(piece) %>
+<% end %>

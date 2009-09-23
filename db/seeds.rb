@@ -10,7 +10,7 @@ require 'find'
 require File.join(File.dirname(__FILE__), "..", "config", "environment.rb")
 
 # Load meta
-OS_DATA_DIR = File.join(RAILS_ROOT, "db", "openstudio.data")
+OS_DATA_DIR = File.join(RAILS_ROOT, "..", "openstudio.data")
 META_DATA_DIR = File.join(OS_DATA_DIR, "meta")
 
 

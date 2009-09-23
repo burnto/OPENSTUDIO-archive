@@ -1,0 +1,3 @@
+<% @members.each do |member| %>
+  <%= link_to h(member.name), member_path(member) %>
+<% end %>
