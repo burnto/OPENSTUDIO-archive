@@ -17,8 +17,10 @@ I've written a db/seeds.rb script to read in the meta data and throw it into the
 
 <pre>
 $ rake db:migrate # creates the database
-$ rake db:seed # runs the seed script. assumes the data directory is <code>openstudio.data</code> in the same parent directory as the rails code. Feel free to move around somewhere else.
+$ rake db:seed    # runs the seed script 
 </pre>
+
+The seed script currently assumes the data directory is <code>openstudio.data/{svg,meta}</code> in the same parent directory as the rails code. Feel free to move around somewhere else.
 
 h3. Image data
 
