@@ -21,6 +21,8 @@ set :use_sudo, false
 set :scm_verbose, true 
 set :repository_cache, "git_cache"
 set :deploy_via, :remote_cache
+set :git_enable_submodules,1
+
 
 # additional settings
 default_run_options[:pty] = true  # Forgo errors when deploying from windows
@@ -38,4 +40,24 @@ namespace :passenger do
   end
 end
 
+namespace :deploy do
+ 
+  task :symlink_shared do
+    run "ln -s #{shared_path}/db #{latest_release}/db/shared"
+    run "ln -s #{shared_path}/system #{release_path}/public/system"
+  end
+
+  desc "Restart Application"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{current_path}/tmp/restart.txt"
+  end
+
+  [:start, :stop].each do |t|
+    desc "#{t} task is a no-op with mod_rails"
+    task t, :roles => :app do ; end
+  end
+
+end
+
+after 'deploy:finalize_update', 'deploy:symlink_shared'
 after :deploy, "passenger:restart"
