@@ -1,14 +1,14 @@
 <h1><%= @piece.title %></h1>
 
 <div>
-  <%= image_tag "/os/500/#{@piece.legacy_id}.png" %>
+  <%= piece_image_tag @piece, 640 %>
 </div>
 
 <p>
-  Creator: <%= link_to h(@piece.creator.name), member_path(@piece.creator) %>
+  Owner: <%= link_to h(@piece.owner.name), member_path(@piece.owner) %>
 </p>
 
 <p>
-  Owner: <%= link_to h(@piece.owner.name), member_path(@piece.owner) %>
+  Created by <%= link_to h(@piece.creator.name), member_path(@piece.creator) %> <%= @piece.created_at.to_formatted_s(:long) %>.<br/> Last modified <%= @piece.updated_at.to_formatted_s(:long) %>
 </p>
 

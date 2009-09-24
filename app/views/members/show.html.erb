@@ -2,11 +2,15 @@
 <p>(<%= @member.login %>)</p>
 
 <h2>Purchased</h2>
+<div class="gallery">
 <% @member.owned.sold.each do |piece| %>
-  <%= link_to h(piece.title), piece_path(piece) %>
+  <%= link_to piece_image_tag(piece), piece_path(piece) %>
 <% end %>
+</div>
 
 <h2>Portfolio</h2>
+<div class="gallery">
 <% @member.created.each do |piece| %>
-  <%= link_to h(piece.title), piece_path(piece) %>
+  <%= link_to piece_image_tag(piece), piece_path(piece) %>
 <% end %>
+</div>
